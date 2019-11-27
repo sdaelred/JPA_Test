@@ -12,6 +12,24 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+/*import receiver.ApplicationContext;
+import receiver.ClassPathXmlApplicationContext;
+import receiver.Message;
+import receiver.Queue;
+import receiver.QueueConnection;
+import receiver.QueueConnectionFactory;
+import receiver.QueueReceiver;
+import receiver.QueueSession;
+import javax.jms.Message;
+import javax.jms.Queue;
+import javax.jms.QueueConnection;
+import javax.jms.QueueConnectionFactory;
+import javax.jms.QueueSender;
+import javax.jms.QueueSession;
+import javax.jms.Session;
+import javax.jms.TextMessage;
+import javax.jms.QueueConnectionFactory;*/
+
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 
@@ -73,4 +91,69 @@ public class CarRestWebService{
 		theCar.setEnd("Deux mois après le " + dates);//Location de deux mois
 	}//Ne pouvant pas tester notre code, nous avons "simulé" une location de deux mois de base.
 	//Dans la vraie vie, les dates entrées seraient de vraies dates proposées par l'utilisateur.
+
+	
+	
+	//Nous pensons qu'il faille mettre ici les résultats du TP2 (message broker).
+	//Le contenu de chaque message devrait être la génération json de nos voitures.
+	//Nous avons des problèmes d'import que nous n'avons pas pu résoudre, 
+	//d'où la mise en commentaire. Le TP a cependant fonctionné quand lancé seul.
+	public void send() {
+		/*try{
+			
+			ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContextJMS.xml");
+			QueueConnectionFactory factory = (QueueConnectionFactory) applicationContext.getBean("connectionFactory");
+			
+			Queue queue = (Queue) applicationContext.getBean("queue");
+			
+			// Create a connection. See https://docs.oracle.com/javaee/7/api/javax/jms/package-summary.html	
+			QueueConnection queueConnection = factory.createQueueConnection();
+			// Open a session without transaction and acknowledge automatic
+			QueueSession session = queueConnection.createQueueSession(false,Session.AUTO_ACKNOWLEDGE); 
+			// Start the connection
+			queueConnection.start();
+			// Create a sender
+			QueueSender sender = session.createSender(queue); 
+			// Create a message
+			TextMessage message =session.createTextMessage("Hello message broker\n\n\n\n\n\n\n\ndddddddddddddddddddddd");
+			// Send the message
+			sender.send(message);
+			// Close the session
+			session.close();
+			
+			// Close the connection
+			queueConnection.close();
+
+		}catch(Exception e){
+			e.printStackTrace();
+		}*/
+	}
+	
+	public void receive() {
+		/*try{
+			
+			ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContextJMS.xml");
+			QueueConnectionFactory factory = (QueueConnectionFactory) applicationContext.getBean("connectionFactory");
+			
+			Queue queue = (Queue) applicationContext.getBean("queue");
+			
+			// Create a connection. See https://docs.oracle.com/javaee/7/api/javax/jms/package-summary.html
+			QueueConnection queueConnection = factory.createQueueConnection();
+			// Open a session	
+			QueueSession session = queueConnection.createQueueSession(false,Session.AUTO_ACKNOWLEDGE); 
+			// start the connection	
+			queueConnection.start();
+			// Create a receive	
+			QueueReceiver receiver = session.createReceiver(queue); 
+			// Receive the message
+			Message m = receiver.receive();
+			
+			System.out.println(m + "rrrrrrrrrr\n\n\n\n\n\n\n\n\n");
+			session.close();
+			queueConnection.close();
+		}catch(Exception e){
+			e.printStackTrace();
+		}*/
+	}
 }
+
