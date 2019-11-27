@@ -1,7 +1,8 @@
 package fr.efrei.JPA_Test;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.ArrayList;//Certains imports sont innutilisés, nous les laissons pour
+import java.util.List;     // quand nous pourrons les utiliser, 
+                           //lorsque nous aurons la correction des TPs.
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -12,8 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Vehicule {
-public Vehicule() {
+public class Car {//Par cohésion avec les autres TP, nous n'avons gardé que la classe "Car".
+public Car() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

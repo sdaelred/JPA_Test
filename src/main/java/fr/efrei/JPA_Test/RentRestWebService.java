@@ -1,4 +1,7 @@
-package fr.efrei.JPA_Test;
+//Pour faire simple, nous avons rassemblé des classes. Celle-ci est donc en commentaire jusqu'à nouvel ordre.
+
+
+/*package fr.efrei.JPA_Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,4 +21,4 @@ public class RentRestWebService {
 	public Iterable<Rent> getRents(){
 		return rentRepository.findAll();
 	}
-}
+}*/

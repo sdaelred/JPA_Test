@@ -1,4 +1,7 @@
-package fr.efrei.JPA_Test;
+//Pour faire simple, nous avons rassemblé des classes. Celle-ci est donc en commentaire jusqu'à nouvel ordre.
+
+
+/*package fr.efrei.JPA_Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -85,3 +88,4 @@ public class Rent {
 	
 
 }
+*/

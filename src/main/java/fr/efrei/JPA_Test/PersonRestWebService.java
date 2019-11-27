@@ -1,4 +1,7 @@
-package fr.efrei.JPA_Test;
+//Pour faire simple, nous avons rassemblé des classes. Celle-ci est donc en commentaire jusqu'à nouvel ordre.
+
+
+/*package fr.efrei.JPA_Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import fr.efrei.JPA_Test.Person;
@@ -22,4 +25,4 @@ public class PersonRestWebService {
 	public Iterable<Person> getPersons(){
 		return personRepository.findAll();
 	}
-}
+}*/
