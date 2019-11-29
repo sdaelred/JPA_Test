@@ -19,6 +19,7 @@ public class Car {
 	private boolean isRented;
 	private int numberOfSeat;
 	private String begin;
+	private String end;
 	
 	public long getId() {
 		return id;
@@ -43,8 +44,6 @@ public class Car {
 	public void setEnd(String end) {
 		this.end = end;
 	}
-
-	private String end;
 	
 	public int getNumberOfSeat() {
 		return numberOfSeat;
