@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /*import receiver.ApplicationContext;
 import receiver.ClassPathXmlApplicationContext;
@@ -36,6 +37,9 @@ import org.springframework.stereotype.Controller;
 @RestController
 public class CarRestWebService{
 	
+	@Autowired
+	private CarRepository carRepository;
+	
 	private List<Car> cars = new ArrayList<Car>();
 	
 	public CarRestWebService() {//Constructeur avec deux voitures de bases
@@ -48,6 +52,7 @@ public class CarRestWebService{
 	@RequestMapping(value="/cars", method=RequestMethod.GET) 
 	@ResponseStatus(HttpStatus.OK) 
 	public List<Car> getListOfCars(){//Renvoie simplement la liste des voitures de la classe
+		carRepository.save(cars);
 		return cars;
 	}
 	
@@ -86,8 +91,8 @@ public class CarRestWebService{
 	@ResponseStatus(HttpStatus.OK) 
 	public void rent(@PathVariable("plateNumber") String plateNumber, @RequestBody(required = false) String dates) throws Exception{
 		Car theCar = aCar(plateNumber);
-		aCar(plateNumber).setRented(true);
-		theCar.setBegin(dates);
+		theCar.setRented(true);
+		theCar.setBegin("29/11/2019");
 		theCar.setEnd("Deux mois après le " + dates);//Location de deux mois
 	}//Ne pouvant pas tester notre code, nous avons "simulé" une location de deux mois de base.
 	//Dans la vraie vie, les dates entrées seraient de vraies dates proposées par l'utilisateur.
